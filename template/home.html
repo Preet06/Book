@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<br lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<br>
+<form action="add">   
+    <button type="submit">Add Books</button>
+</br>
+</form>
+</br>
+<form action="" method="GET">
+    {% csrf_token %}
+    <select name="Language">
+        <option selected disabled=true>--select occupation--</option>
+        <option>English</option>
+        <option>Hindi</option>
+        <option>Marathi</option>
+    </select>
+    <select name="Genre">
+        <option selected disabled=true>--select occupation--</option>
+        <option>Story</option>
+        <option>Bio</option>
+        <option>Art</option>
+    </select>
+    <input type="submit" value="search">   
+</form>
+</br>
+</br>
+</form>
+
+{% for i in data %}
+   <label> Book_Name :</label> {{ i.Book_Name}}</body> </br>
+   <label> Author :</label>{{ i.Author }} </br>
+   <label> Genre :</label>{{ i.Genre }} </br>
+   <label> Language :</label>{{ i.Language }} </br>
+   <hr>
+   <hr>
+{% endfor %}
+<form action="">
+    <button type="submit">Explore Books</button>
+</form>
+</body>
+
+</html>
